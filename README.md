@@ -146,6 +146,14 @@ pnpm --filter bill-splitter-api cf-typegen
 You can use AI tools. Tell us which ones and where in your answers on the form.
 You must understand every line you submit. We check this with your video and in a live call. "The AI wrote it" is not an answer.
 
+## Decisions
+
+1. **Store money as integer cents:** All bill amounts and shares are stored as integers rather than floating-point values. This avoids rounding errors during bill splitting and payment calculations.
+
+2. **Use database constraints and conditional updates:** Foreign keys and other constraints protect data integrity. Payments use an idempotency key and an update condition that only allows an unpaid share to be marked as paid. This helps prevent duplicate payments, including concurrent requests.
+
+3. **Keep the frontend simple and API-driven:** The React frontend communicates with the Hono API to create homes, manage members, display bills and balances, and record payments. Loading and error states provide feedback when requests are slow or fail.
+
 ## How to submit
 
 1. Click **Use this template**, then **Create a new repository**. Make the repository **public**.
