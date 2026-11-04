@@ -302,6 +302,39 @@ function Home() {
   }
 
   return (
+    <>
+
+      <style>{`
+        * { box-sizing: border-box; }
+        body { margin: 0; background: #f4f6fb; color: #182238; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+        main { min-height: 100vh !important; padding: 34px 22px !important; background: #f4f6fb !important; }
+        main > div { max-width: 1120px !important; }
+        header { background: #182238; color: white; padding: 30px 34px; border-radius: 20px; margin-bottom: 24px !important; box-shadow: 0 12px 32px rgba(24,34,56,.12); }
+        header p:first-child { color: #aaa4ff !important; font-size: 11px !important; letter-spacing: 1.8px !important; }
+        header h1 { font-size: clamp(27px, 4vw, 36px) !important; letter-spacing: -1.2px; }
+        header p:last-child { color: #c1cada !important; }
+        section { background: #fff !important; border: 1px solid #e6eaf2 !important; border-radius: 17px !important; padding: 24px !important; margin-bottom: 18px !important; box-shadow: 0 5px 22px rgba(25,35,60,.035) !important; }
+        section h2 { font-size: 17px !important; letter-spacing: -.3px; }
+        label { display: block; color: #536076; font-size: 12px; font-weight: 700; margin: 4px 0 0; }
+        input { width: 100% !important; box-sizing: border-box !important; padding: 12px 14px !important; border: 1px solid #dfe4ed !important; border-radius: 10px !important; background: #fbfcfe !important; color: #182238 !important; font-size: 14px !important; outline: none; }
+        input:focus { border-color: #8176ec !important; box-shadow: 0 0 0 3px rgba(101,88,232,.12); background: white !important; }
+        button { border-radius: 10px !important; font-weight: 700 !important; transition: .18s ease; }
+        button:hover:not(:disabled) { transform: translateY(-1px); filter: brightness(.97); }
+        button:disabled { opacity: .6; cursor: not-allowed !important; }
+        table { border-collapse: separate !important; border-spacing: 0; overflow: hidden; border: 1px solid #edf0f5; border-radius: 12px; }
+        th { color: #7d8799; background: #f8f9fc; font-size: 11px; text-transform: uppercase; letter-spacing: .8px; }
+        td { border-bottom: 1px solid #f0f2f6; font-size: 13px; }
+        article { background: #fcfcfe; border-color: #e9edf4 !important; border-radius: 13px !important; }
+        article h3 { font-size: 15px; letter-spacing: -.2px; }
+        article button { padding: 9px 12px !important; font-size: 12px !important; }
+        footer { padding-top: 24px !important; }
+        @media (max-width: 600px) {
+          main { padding: 18px 12px !important; }
+          header { padding: 23px 20px; }
+          section { padding: 18px !important; }
+        }
+      `}</style>
+
     <main style={styles.page}>
       <div style={styles.container}>
         <header style={{ marginBottom: 28 }}>
@@ -647,5 +680,6 @@ function Home() {
         </footer>
       </div>
     </main>
+    </>
   )
 }
